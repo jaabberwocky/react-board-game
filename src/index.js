@@ -3,10 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+  stateSwitcher() {
+    if (this.state.value === 'X') {
+      this.setState({
+        value: 'O'
+      })
+    } else if (this.state.value === null) {
+      this.setState({ value: 'X' })
+    } else { this.setState({ value: 'X' }) }
+  }
+
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
+      <button
+        className="square"
+        onClick={this.stateSwitcher.bind(this)}
+      >
+        {this.state.value}
       </button>
     );
   }
@@ -14,7 +33,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
@@ -46,8 +65,10 @@ class Board extends React.Component {
 class Game extends React.Component {
   render() {
     return (
+
       <div className="game">
         <div className="game-board">
+          <h1>Hello world</h1>
           <Board />
         </div>
         <div className="game-info">

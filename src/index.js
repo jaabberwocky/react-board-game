@@ -9,13 +9,12 @@ class Square extends React.Component {
       value: null,
     };
   }
+
   stateSwitcher() {
     if (this.state.value === 'X') {
       this.setState({
         value: 'O'
       })
-    } else if (this.state.value === null) {
-      this.setState({ value: 'X' })
     } else { this.setState({ value: 'X' }) }
   }
 

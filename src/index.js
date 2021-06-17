@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Square(props) {
+  // function component since there is only one
+  // render method
   return (
     <button className="square" onClick={props.onClick}>
       {props.value}
